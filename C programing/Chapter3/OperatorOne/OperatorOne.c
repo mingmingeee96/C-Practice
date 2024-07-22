@@ -67,7 +67,7 @@ int main()
 	printf("result3: %d \n\n", result6);	// 03-2 예제7
 
 	int num16 = 1, num17 = 2;
-	printf("Hello "), printf("sorld! \n");
+	printf("Hello "), printf("world! \n");
 	num16++, num17++;
 	printf("%d ", num16), printf("%d ", num17), printf("\n");
 
