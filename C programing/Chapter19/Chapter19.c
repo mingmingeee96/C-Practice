@@ -44,9 +44,6 @@ void SoSimpleFunc(void)
 	printf("I'm so simple");
 }
 
-// ArgvParamType.c 예제
-
-
 int main()
 {
 	// FunctionPointer.c 예제
@@ -84,8 +81,6 @@ int main()
 
 	ptr = SoSimpleFunc;		// 함수의 주소 값 저장.
 	printf("%p \n\n", ptr);
-
-	// ArgvParamType.c 예제
 
 	return 0;
 }

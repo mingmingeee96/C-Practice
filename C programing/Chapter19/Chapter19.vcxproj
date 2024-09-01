@@ -128,10 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Chapter19.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ArgcArgv.exe" />
+    <ClCompile Include="ArgvEndNULL.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

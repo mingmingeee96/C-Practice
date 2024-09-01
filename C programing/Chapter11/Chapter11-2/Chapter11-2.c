@@ -1,7 +1,8 @@
 ﻿#include<stdio.h>
 
 int main ()
-{	
+{
+/*
 	// ArrayString.c 예제
 	char str[] = "Good morning!";
 	printf("배열 str의 크기: %d \n", sizeof(str));
@@ -15,7 +16,7 @@ int main ()
 	char nu = '\0';	// 널 문자 저장
 	char sp = ' ';	// 공백 문자 저장
 	printf("%d %d\n\n", nu, sp);	// '0 32' 출력
-
+*/
 	// ReadString.c 예제
 	char Str[50];
 	int idx = 0;
@@ -33,11 +34,16 @@ int main ()
 	printf("\n\n");
 
 	// StartEndString.c 예제
-	char string[50] = "I like C programming";
+	int ar1Len, ar2Len;
+	char string[] = "I like C programming";
 	printf("string: %s \n", string);
+	ar1Len = sizeof(string) / sizeof(char);
+	printf("%d \n", ar1Len);
 
 	string[8] = '\0';
 	printf("string: %s \n", string);
+	ar2Len = sizeof(string) / sizeof(char);
+	printf("%d \n", ar2Len);
 
 	string[6] = '\0';
 	printf("string: %s \n", string);
@@ -47,7 +53,7 @@ int main ()
 
 	/*문제 11-2 
 	Q.1 하나의 영단어 입력 받아서 영단어의 길이 계산하여 출력하는 프로그램.*/
-
+/*
 	char word[100];
 	int len = 0;
 
@@ -58,8 +64,9 @@ int main ()
 		len++;
 
 	printf("영단어의 길이: %d\n\n", len);
-
+*/
 	/* Q.2 영단어 입력받아 뒤집어서 출력. (널 문자 위치 조심) */
+/*
 	char word[100];
 	int i, n = 0;
 	char rev;
@@ -78,8 +85,9 @@ int main ()
 	}
 
 	printf("뒤집힌 영단어: %s \n\n", word);
-
+*/
 	/* Q.3 영단어 입력 받고, 아스키 문자 값이 가장 큰 값 출력. */
+/*
 	char word[100];
 	int i = 0, n;
 	char asc = 0;
@@ -95,6 +103,6 @@ int main ()
 			asc = word[n];
 
 	printf("아스키 코드 값이 가장 큰 문자: %c", asc);
-
+*/
 	return 0;
 }

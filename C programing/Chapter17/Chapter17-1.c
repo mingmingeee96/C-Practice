@@ -13,7 +13,7 @@ void SwapIntPtr(int* p1, int* p2)
 void SwapIntPtrS(int** dp1, int** dp2)
 {
 	int* temp = *dp1;
-	*dp1=*dp2;
+	*dp1 = *dp2;
 	*dp2 = temp;
 }
 

@@ -1,4 +1,5 @@
-﻿#include <stdio.h>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
 int main()
 {
@@ -88,12 +89,14 @@ int main()
 	default:
 		printf("I Don't Know! \n");
 	}
+	
+	printf("\n");
 
 	// AdvanEnglishSchool.c 예제
 	char sel;
-	printf("M 오전, A 오후, E 저녁 \n");
+	printf("M 오전, A 오후, E 저녁");
 	printf("입력: ");
-	scanf_s("%c", &sel);
+	scanf_s("%c", &sel, 1);
 
 	switch (sel)
 	{

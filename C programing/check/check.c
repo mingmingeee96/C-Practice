@@ -2,17 +2,24 @@
 
 int main() 
 {
-	int blank, star, l, n, N;
-	scanf_s("%d", &n);
-	N = n;
-	for (l = 1; l <= n; l++)
+	int count[10] = { 0 };
+	int i, N, max;
+
+	scanf_s("%d", &N);
+	
+	while (N > 0)
 	{
-		for (blank = 1; blank < N; blank++)
-			printf(" ");
-		for (star = 0; star < l; star++)
-			printf("*");
-		N--;  // 여기에 갯수 줄이는 것을 넣어야지 오류가 안났다.
-		printf("\n");
+		count[N % 10]++;
+		N /= 10;
 	}
+
+	count[6] = (count[6] + count[9] + 1) / 2;
+
+	max = 0;
+	for (i = 0; i < 9; i++)
+		if (max < count[i])
+			max = count[i];
+
+	printf("%d", max);
 	return 0;
 }

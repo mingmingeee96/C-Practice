@@ -39,6 +39,7 @@ int main()
 
 	printf("sizeof(arr2d): %d \n", sizeof(arr2d));
 	printf("sizeof(arr2d[0]): %d \n", sizeof(arr2d[0]));
+	printf("+) sizeof(arr2d[0][0]): %d \n", sizeof(arr2d[0][0]));
 	printf("sizeof(arr2d[1]): %d \n", sizeof(arr2d[1]));
 	printf("sizeof(arr2d[2]): %d \n\n", sizeof(arr2d[2]));
 

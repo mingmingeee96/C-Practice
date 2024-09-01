@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 // TwoDimArraySize.c 예제
-/*int main()
+/*
+int main()
 {
 	int arr1[3][4];
 	int arr2[7][9];
@@ -10,11 +11,12 @@
 	printf("세로7, 가로9: %d \n", sizeof(arr2));
 
 	return 0;
-}*/
+}
+*/
 
 // PopuResarch.c 예제
-
-/*int main()
+/*
+int main()
 {
 	int villa[4][2];
 	int popu, i, j;
@@ -38,17 +40,12 @@
 		printf("%d층 인구수: %d \n", i + 1, popu);
 	}
 
-	int arr[3][2];
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 2; j++)
-			printf("%p \n", &arr[i][j]);
-
 	return 0;
-}*/
-
+}
+*/
 // TwoDimArrayAddr.c 예제
-
-/*int main()
+/*
+int main()
 {
 	int arr[3][2];
 	int i, j;
@@ -56,11 +53,11 @@
 		for (j = 0; j < 2; j++)
 			printf("%p \n", &arr[i][j]);
 	return 0;
-}*/
-
+}
+*/
 // TwoDimArrayInit.c 예제
-
-/*int main()
+/*
+int main()
 {
 	int i, j;
 
@@ -104,12 +101,12 @@
 		printf("\n");
 	}
 	return 0;
-}*/
-
+}
+*/
 // 문제 16-1
 // 문제 1
-
-/*int main()
+/*
+int main()
 {
 	int i, j;
 	int arr[3][9];
@@ -124,11 +121,11 @@
 		printf("\n");
 	}
 	return 0;
-}*/
-
+}
+*/
 // 문제 2
-
-/*int main()
+/*
+int main()
 {
 	int arr_a[2][4] = { 1,2,3,4,5,6,7,8 };
 	int arr_b[4][2];
@@ -150,11 +147,11 @@
 		printf("\n");
 	}
 	return 0;
-}*/
-
+}
+*/
 // 문제 3
-
-/*int main()
+/*
+int main()
 {
 	int arr[5][5] = { 0, };
 
@@ -199,19 +196,19 @@
 		printf("\n");
 	};
 	return 0;
-}*/
-
+}
+*/
 // ThreeDimArraySize.c 예제
-
-/*int main()
+/*
+int main()
 {
 	int arr1[2][3][4];
 	double arr2[5][5][5];
 	printf("높이2, 세로3, 가로4 int형 배열: %d \n", sizeof(arr1));
 	printf("높이5, 세로5, 가로5 double형 배열: %d \n", sizeof(arr2));
 	return 0;
-}*/
-
+}
+*/
 // ThreeDimArrayAccess.c 예제
 
 int main()
@@ -251,6 +248,6 @@ int main()
 		for (j = 0; j < 2; j++)
 			mean += record[2][i][j];
 	printf("C 학급 전체 평균: %g \n", (double)mean / 6);
-
+	
 	return 0;
 }

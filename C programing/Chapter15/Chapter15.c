@@ -1,28 +1,19 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
+/*
 // 1번
 void odd(int* a, int len)
 {
-	int count = 0;
-	for (int i = 0; i < len; i++)
-	{
-		if (a[i] % 2 != 0)
-			count++;	// 홀수의 갯수 세는 것.
-	}
-	printf("홀수출력: ");
+	printf("홀수 출력: ");
 	for (int i = 0; i < len; i++)
 	{
 		if (a[i] % 2 == 1)
-		{
-			count--;
-			printf("%d", a[i]);
-			if (count != 0)
-				printf(", ");	// 끝에는 , 안 넣고 중간 중간 넣기.
-		}
+			printf("%d ", a[i]);
 	}
 	printf("\n");
 }
+
 void even(int* a, int len)
 {
 	int count = 0;
@@ -31,7 +22,7 @@ void even(int* a, int len)
 		if (a[i] % 2 == 0)
 			count++;	// 홀수와 동일
 	}
-	printf("짝수출력: ");
+	printf("짝수 출력: ");
 	for (int i = 0; i < len; i++)
 	{
 		if (a[i] % 2 == 0)
@@ -58,6 +49,7 @@ int main(void)
 
 	return 0;
 }
+
 // 2번
 int main()
 {
@@ -78,6 +70,7 @@ int main()
 
 	return 0;
 }
+
 // 3번
 int main()
 {
@@ -99,17 +92,21 @@ int main()
 			a[i - count_e] = num;
 		}
 	}
-	printf("배열 요소의 출력: %d %d %d %d %d %d %d %d %d %d",
-		a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9]);
+	//printf("배열 요소의 출력: %d %d %d %d %d %d %d %d %d %d",
+	//	a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9]);
+	printf("배열 요소의 출력: ");
+	for (int i = 0; i < 10; i++)
+		printf("%d ", a[i]);
 	
 	return 0;
 }
+
 // 4번
 int main()
 {
 	char str[101] = { 0 };
 	printf("문자열 입력: ");
-	scanf_s("%s", &str);
+	scanf_s("%s", &str, 100);
 
 	int len = strlen(str);
 	int count = 0;
@@ -125,6 +122,7 @@ int main()
 	else
 		printf("회문이 아닙니다.");
 }
+*/
 // 5번
 void BubbleSort(int ary[], int len)	// 내림차순 정렬
 {
