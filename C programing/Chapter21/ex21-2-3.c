@@ -49,7 +49,8 @@ int CompareAge(char str1[], char str2[])
 
 int main() 
 {
-    char person1[30], person2[30];
+    char person1[30], person2[30];  // 이름과 나이 변수 따로 따로 선정해서 받기...!
+    
 
     printf("사람 1 (이름 나이): ");
     fgets(person1, sizeof(person1), stdin);
