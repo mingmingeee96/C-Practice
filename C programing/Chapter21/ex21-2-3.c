@@ -27,9 +27,9 @@ int CompareName(char str1[], char str2[])
     int idx2=Space(str2);
 
     if(idx1 != idx2)    // 이름의 길이가 다르면 다른 이름.
-        return strncmp(str1, str2, idx1);
+        return 1;
     else
-        return strcmp(str1, str2);  // 이름이 같으면 1, 다르면 0 반환
+        return strncmp(str1, str2, idx1);  // 이름이 같으면 1, 다르면 0 반환
 }
 
 int CompareAge(char str1[], char str2[])
@@ -60,7 +60,7 @@ int main()
     fgets(person2, sizeof(person2), stdin);
     person2[strlen(person2) - 1] = 0;
 
-    if(CompareName(person1, person2))
+    if(!CompareName(person1, person2))
         puts("두 사람 이름이 같습니다.");
     else
         puts("두 사람 이름이 다릅니다.");
