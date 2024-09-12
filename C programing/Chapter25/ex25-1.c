@@ -29,7 +29,6 @@ int main() {
             printf("%s ", &str[i+1]);
             str[i] = 0;
         }
-        i++;
     }
     printf("%s", &str[0]);
     free(str);
