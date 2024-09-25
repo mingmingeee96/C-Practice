@@ -1,0 +1,25 @@
+apple
+avocado
+banana
+blackberry
+blueberry
+cherry tomato
+cherry
+coconut
+grape
+kiwi
+lemon
+lime
+mango
+melon
+orange
+papaya
+peach
+pear
+persimmon
+pineapple
+plum
+strawberry
+tangerine
+tomato
+watermelon
