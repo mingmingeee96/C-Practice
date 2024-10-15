@@ -24,7 +24,7 @@ int LFirst(List * plist, LData * pdata)
 	if(plist->numOfData == 0)	// 저장된 데이터가 하나도 없다면
     	return FALSE;
     
-    (plist->numOfData) = 0;		// 참조 위치 초기화. 첫 번째 데이터의 참조
+    (plist->curPosition) = 0;		// 참조 위치 초기화. 첫 번째 데이터의 참조
     *pdata = plist->arr[0];		// pdata가 가리키는 공간에 데이터 저장
     return TRUE;
 }
