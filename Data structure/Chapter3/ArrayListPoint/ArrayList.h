@@ -1,13 +1,16 @@
 #ifndef __ARRAY_LIST_H__
 #define __ARRAY_LIST_H__
 
+#include "Point.h"
+
 #define TRUE        1   // 참을 표현하기 위한 메크로 정의
 #define FALSE       0   // 거짓을 표현하기 위한 메크로 정의
 
 #define LIST_LEN    100
 
 // LData에 대한 typedef 선언
-typedef int LData;
+typedef Point * LData;
+
 typedef struct __ArrayList  // 배열 기반 리스트를 정의한 구조체
 {
     LData arr[LIST_LEN];    // 리스트의 저장소인 배열

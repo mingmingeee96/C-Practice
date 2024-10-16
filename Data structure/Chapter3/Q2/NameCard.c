@@ -11,7 +11,7 @@ NameCard * MakeNameCard(char * name, char * phone)
     return newCard;
 }
 
-void ShowShowNameCardInfo(NameCard * pcard)
+void ShowNameCardInfo(NameCard * pcard)
 {
     printf("[Name] %s \n", pcard->name);
     printf("[Phone] %s \n\n", pcard->phone);

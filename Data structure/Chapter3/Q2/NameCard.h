@@ -1,7 +1,10 @@
+#ifndef __NAME_CARD_H__
+#define __NAME_CARD_H__
+
 #define NAME_LEN        30
 #define PHONE_LEN       30
 
-typedef struct _namecard
+typedef struct __namecard
 {
     char name[NAME_LEN];
     char phone[PHONE_LEN];
@@ -18,3 +21,5 @@ int NameCompare(NameCard * pcard, char * name);
 
 // 전화번호 정보를 변경
 void ChangePhoneNum(NameCard * pcard, char * phone);
+
+#endif
