@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "areaarith.h": "c",
         "roundarith.h": "c",
-        "arraylist.h": "c"
+        "arraylist.h": "c",
+        "dlinkedlist.h": "c"
     }
 }
