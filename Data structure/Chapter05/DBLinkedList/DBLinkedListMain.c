@@ -21,15 +21,15 @@ int main()
     // 저장된 데이터 조회
     if(LFirst(&list, &data))
     {
-        printf("%d \n", data);
+        printf("%d ", data);
 
         // 오른쪽 노드로 이동하며 데이터 조회
         while(LNext(&list, &data))
-            printf("%d \n", data);
+            printf("%d ", data);
         
         // 왼쪽 노드로 이동하며 데이터 조회
         while(LPrevious(&list, &data))
-            printf("%d \n", data);
+            printf("%d ", data);
         
         printf("\n\n");
     }
