@@ -4,6 +4,7 @@
         "areaarith.h": "c",
         "roundarith.h": "c",
         "arraylist.h": "c",
-        "dlinkedlist.h": "c"
+        "dlinkedlist.h": "c",
+        "listbasestack.h": "c"
     }
 }
