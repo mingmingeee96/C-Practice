@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "ListBaseStack.h"
 #include "PostCalculator.h"
 
 int main()

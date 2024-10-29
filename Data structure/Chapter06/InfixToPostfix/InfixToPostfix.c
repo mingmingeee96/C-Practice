@@ -1,9 +1,7 @@
-#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include "ListBaseStack.h"
-#include "InfixToPostfix.h"
 
 // 연산자의 연산 우선순위 정보 반환
 int GetOpPrec(char op)
