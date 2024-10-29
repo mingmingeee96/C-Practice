@@ -5,6 +5,8 @@
         "roundarith.h": "c",
         "arraylist.h": "c",
         "dlinkedlist.h": "c",
-        "listbasestack.h": "c"
+        "listbasestack.h": "c",
+        "stdlib.h": "c",
+        "postcalculator.h": "c"
     }
 }
