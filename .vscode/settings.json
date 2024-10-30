@@ -7,6 +7,7 @@
         "dlinkedlist.h": "c",
         "listbasestack.h": "c",
         "stdlib.h": "c",
-        "postcalculator.h": "c"
+        "postcalculator.h": "c",
+        "listbasequeue.h": "c"
     }
 }
