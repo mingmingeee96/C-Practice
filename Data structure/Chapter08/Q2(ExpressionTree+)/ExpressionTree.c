@@ -74,9 +74,20 @@ void ShowPrefixTypeExp(BTreeNode * bt)	// 전위 표기법으로 수식 출력
 	PreorderTraverse(bt, ShowNodeData);
 }
 
-void ShowInfixTypeExp(BTreeNode * bt)	// 중위 표기법으로 수식 출력
+void ShowInfixTypeExp(BTreeNode * bt)	// 중위 표기법 (소괄호 포함)으로 수식 출력
 {
-	InorderTraverse(bt, ShowNodeData);
+	if(bt == NULL)
+		return;
+        
+    if(bt->left != NULL || bt->right != NULL)
+		printf(" ( ");
+    
+    ShowInfixTypeExp(bt->left);		// 첫 번째 피연산자 출력
+    ShowNodeData(bt->data);			// 연산자 출력
+    ShowInfixTypeExp(bt->right);	// 두 번째 피연산자 출력
+    
+    if(bt->left != NULL || bt->right != NULL)
+		printf(" ) ");
 }
 
 void ShowPostfixTypeExp(BTreeNode * bt)	// 후위 표기법으로 수식 출력
