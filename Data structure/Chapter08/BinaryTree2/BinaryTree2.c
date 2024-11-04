@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "BinaryTree.h"
+#include "BinaryTree2.h"
 
 BTreeNode * MakeBTreeNode(void)
 {
@@ -44,4 +44,37 @@ void MakeRightSubTree(BTreeNode * main, BTreeNode * sub)
         free(main->right);
     
     main->right = sub;
+}
+
+// 중위 순회
+void InorderTraverse(BTreeNode * bt, VisitFuncPtr action)
+{
+    if(bt == NULL)
+        return;
+    
+    InorderTraverse(bt->left, action);
+    action(bt->data);
+    InorderTraverse(bt->right, action);
+}
+
+// 후위 순회
+void PostorderTraverse(BTreeNode * bt, VisitFuncPtr action)
+{
+    if(bt == NULL)
+        return;
+    
+    PostorderTraverse(bt->left, action);
+    PostorderTraverse(bt->right, action);
+    action(bt->data);
+}
+
+// 전위 순회
+void PreorderTraverse(BTreeNode * bt, VisitFuncPtr action)
+{
+    if(bt == NULL)
+        return;
+    
+    action(bt->data);
+    PreorderTraverse(bt->left, action);
+    PreorderTraverse(bt->right, action);
 }

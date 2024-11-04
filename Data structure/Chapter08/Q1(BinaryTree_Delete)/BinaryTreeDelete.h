@@ -1,5 +1,5 @@
-#ifndef __BINARY_TREE_H__
-#define __BINARY_TREE_H__
+#ifndef __BINARY_TREE2_H__
+#define __BINARY_TREE2_H__
 
 typedef int BTData;
 
@@ -19,5 +19,15 @@ BTreeNode * GetRightSubTree(BTreeNode * bt);
 
 void MakeLeftSubTree(BTreeNode * main, BTreeNode * sub);
 void MakeRightSubTree(BTreeNode * main, BTreeNode * sub);
+
+// 순회 방법 함수 추가
+typedef void (*VisitFuncPtr)(BTData data);
+
+void InorderTraverse(BTreeNode * bt, VisitFuncPtr action);
+void PostorderTraverse(BTreeNode * bt, VisitFuncPtr action);
+void PreorderTraverse(BTreeNode * bt, VisitFuncPtr action);
+
+// 이진 트리 소멸 함수
+void DeleteTree(BTreeNode * bt);
 
 #endif
