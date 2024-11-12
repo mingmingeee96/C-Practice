@@ -9,5 +9,6 @@
         "stdlib.h": "c",
         "postcalculator.h": "c",
         "listbasequeue.h": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
