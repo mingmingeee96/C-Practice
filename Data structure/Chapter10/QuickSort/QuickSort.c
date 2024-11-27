@@ -31,6 +31,8 @@ int Partition(int arr[], int left, int right)
     int low = left + 1;
     int high = right;
 
+    Swap(arr, left, pIdx);
+
     printf("pivot: %d \n", pivot);
 
     while(low <= high)      // 교차되지 않을 때까지 반복
@@ -56,7 +58,7 @@ int Partition(int arr[], int left, int right)
 
 void QuickSort(int arr[], int left, int right)
 {
-    if(left <= right)
+    if(left < right)
     {
         int pivot = Partition(arr, left, right);    // 피벗 기준 영역 나누기
         QuickSort(arr, left, pivot-1);              // 왼쪽 영역 정렬
