@@ -33,15 +33,15 @@ int main()
     printf("Left 1: %d, Right 1: %d \n", GetData(clNode), GetData(crNode));
 
     clNode2 = GetLeftSubTree(clNode);
-    crNode2 = GetRightSubTree(crNode);
+    crNode2 = GetRightSubTree(clNode);
     printf("Left 2: %d, Right 2: %d \n", GetData(clNode2), GetData(crNode2));
 
-    clNode2 = GetLeftSubTree(clNode);
+    clNode2 = GetLeftSubTree(crNode);
     crNode2 = GetRightSubTree(crNode);
-    printf("Left 3: %d, Right 3: %d \n", GetData(clNode3), GetData(crNode3));
+    printf("Left 3: %d, Right 3: %d \n", GetData(clNode2), GetData(crNode2));
 
-    clNode2 = GetLeftSubTree(clNode2);
-    crNode2 = GetRightSubTree(crNode2);
+    clNode3 = GetLeftSubTree(clNode2);
+    crNode3 = GetRightSubTree(crNode2);
     printf("Left 4: %d, Right 4: %d \n", GetData(clNode3), GetData(crNode3));
 
     return 0;
