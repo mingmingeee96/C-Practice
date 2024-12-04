@@ -14,7 +14,7 @@ BSTData BSTGetNodeData(BTreeNode * bst)
 	return GetData(bst);
 }
 
-void BSTInsert(BTreeNode ** pRoot, BSTData data)
+BTreeNode * BSTInsert(BTreeNode ** pRoot, BSTData data)
 {
 	if (*pRoot == NULL)
 	{
@@ -33,7 +33,7 @@ void BSTInsert(BTreeNode ** pRoot, BSTData data)
 	}
 	else
 	{
-		return NULL; // Å°ÀÇ Áßº¹À» Çã¿ëÇÏÁö ¾Ê´Â´Ù.
+		return NULL; // Å°ï¿½ï¿½ ï¿½ßºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
 	}
 	return *pRoot;
 }
@@ -60,18 +60,18 @@ BTreeNode * BSTSearch(BTreeNode * bst, BSTData target)
 
 BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
 {
-	// »èÁ¦ ´ë»óÀÌ ·çÆ® ³ëµåÀÎ °æ¿ì¸¦ º°µµ·Î °í·ÁÇØ¾ß ÇÑ´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Ñ´ï¿½.
 
-	BTreeNode * pVRoot = MakeBTreeNode();    // °¡»ó ·çÆ® ³ëµå;
+	BTreeNode * pVRoot = MakeBTreeNode();    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½;
 
 	BTreeNode * pNode = pVRoot;    // parent node
 	BTreeNode * cNode = *pRoot;    // current node
 	BTreeNode * dNode;    // delete node
 
-	// ·çÆ® ³ëµå¸¦ pVRoot°¡ °¡¸®Å°´Â ³ëµåÀÇ ¿À¸¥ÂÊ ¼­ºê ³ëµå°¡ µÇ°Ô ÇÑ´Ù.
+	// ï¿½ï¿½Æ® ï¿½ï¿½å¸¦ pVRootï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å°¡ ï¿½Ç°ï¿½ ï¿½Ñ´ï¿½.
 	ChangeRightSubTree(pVRoot, *pRoot);
 	
-	// »èÁ¦ ´ë»óÀ» ÀúÀåÇÑ ³ëµå Å½»ö
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Å½ï¿½ï¿½
 	while(cNode != NULL && GetData(cNode) != target)
 	{
 		pNode = cNode;
@@ -82,12 +82,12 @@ BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
 			cNode = GetRightSubTree(cNode);
 	}
 
-	if(cNode == NULL)    // »èÁ¦ ´ë»óÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é,
+	if(cNode == NULL)    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´Ù¸ï¿½,
 		return NULL;
 
-	dNode = cNode;    // »èÁ¦ ´ë»óÀ» dNode°¡ °¡¸®Å°°Ô ÇÑ´Ù.
+	dNode = cNode;    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ dNodeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ñ´ï¿½.
 
-	// Ã¹ ¹øÂ° °æ¿ì: »èÁ¦ÇÒ ³ëµå°¡ ´Ü¸» ³ëµåÀÎ °æ¿ì
+	// Ã¹ ï¿½ï¿½Â° ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å°¡ ï¿½Ü¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	if(GetLeftSubTree(dNode) == NULL && GetRightSubTree(dNode) == NULL)
 	{
 		if(GetLeftSubTree(pNode) == dNode)
@@ -96,10 +96,10 @@ BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
 			RemoveRightSubTree(pNode);
 	}
 
-	// µÎ ¹øÂ° °æ¿ì: ÇÏ³ªÀÇ ÀÚ½Ä ³ëµå¸¦ °®´Â °æ¿ì
+	// ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½: ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	else if(GetLeftSubTree(dNode) == NULL || GetRightSubTree(dNode) == NULL)
 	{
-		BTreeNode * dcNode;    // delete nodeÀÇ ÀÚ½Ä ³ëµå
+		BTreeNode * dcNode;    // delete nodeï¿½ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½
 
 		if(GetLeftSubTree(dNode) != NULL)
 			dcNode = GetLeftSubTree(dNode);
@@ -112,41 +112,41 @@ BTreeNode * BSTRemove(BTreeNode ** pRoot, BSTData target)
 			ChangeRightSubTree(pNode, dcNode);
 	}
 
-	// ¼¼ ¹øÂ° °æ¿ì: µÎ °³ÀÇ ÀÚ½Ä ³ëµå¸¦ ¸ðµÎ °®´Â °æ¿ì
+	// ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	else
 	{
 		BTreeNode * mNode = GetRightSubTree(dNode);    // mininum node
-		BTreeNode * mpNode = dNode;    // mininum nodeÀÇ ºÎ¸ð ³ëµå
+		BTreeNode * mpNode = dNode;    // mininum nodeï¿½ï¿½ ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½
 		int delData;
 
-		// »èÁ¦ÇÒ ³ëµå¸¦ ´ëÃ¼ÇÒ ³ëµå¸¦ Ã£´Â´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½å¸¦ Ã£ï¿½Â´ï¿½.
 		while(GetLeftSubTree(mNode) != NULL)
 		{
 			mpNode = mNode;
 			mNode = GetLeftSubTree(mNode);
 		}
 		
-		// ´ëÃ¼ÇÒ ³ëµå¿¡ ÀúÀåµÈ °ªÀ» »èÁ¦ÇÒ ³ëµå¿¡ ´ëÀÔÇÑ´Ù.
-		delData = GetData(dNode);    // ´ëÀÔ Àü µ¥ÀÌÅÍ ¹é¾÷
+		// ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+		delData = GetData(dNode);    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		SetData(dNode, GetData(mNode));
 
-		// ´ëÃ¼ÇÒ ³ëµåÀÇ ºÎ¸ð ³ëµå¿Í ÀÚ½Ä ³ëµå¸¦ ¿¬°áÇÑ´Ù.
+		// ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		if(GetLeftSubTree(mpNode) == mNode)
 			ChangeLeftSubTree(mpNode, GetRightSubTree(mNode));
 		else
 			ChangeRightSubTree(mpNode, GetRightSubTree(mNode));
 
 		dNode = mNode;
-		SetData(dNode, delData);    // ¹é¾÷ µ¥ÀÌÅÍ º¹¿ø
+		SetData(dNode, delData);    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 
-	// »èÁ¦µÈ ³ëµå°¡ ·çÆ® ³ëµåÀÎ °æ¿ì¿¡ ´ëÇÑ Ã³¸®
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å°¡ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 	if(GetRightSubTree(pVRoot) != *pRoot)
 		*pRoot = GetRightSubTree(pVRoot);
 
 	free(pVRoot);
 
-    *pRoot = Rebalance(pRoot); 	// ³ëµå Á¦°Å ÈÄ ¸®¹ë·±½Ì!
+    *pRoot = Rebalance(pRoot); 	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ë·±ï¿½ï¿½!
 	return dNode;
 }
 
