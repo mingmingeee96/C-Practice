@@ -40,7 +40,7 @@ int main(void)
 	crNode2 = GetRightSubTree(crNode);   //8, 3�� ������
 	printf("%d, %d \n", GetData(clNode2), GetData(crNode2));
 
-	clNode3 = GetLeftSubTree(clNode2);   //7, 8�� ����
+	clNode3 = GetLeftSubTree(crNode2);   //7, 8�� ����
 	crNode3 = GetRightSubTree(crNode2);  //9, 8�� ������
 	printf("%d, %d \n", GetData(clNode3), GetData(crNode3)); 
 	return 0;
